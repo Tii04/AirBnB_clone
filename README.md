@@ -8,10 +8,17 @@ This project will be the first step in creating an Airbnb. However this AirBnB w
 **Command Interpreter Description**
 
 * How to start it.
-	(Description will be added soon)
+
+	The command Interpreter can be started by executing the console.py.
+	After, executing the .py file the prompt will come up and then commands can be typed.
 
 * How to use it.
-	(Decription will be added soon)
+
+	Once the prompt is visible, commands may be entered. 
+	Different commands generate different output. 
+	For example: "help" typed alone brings up all the commands that are in the baseModel class.
+	"help" typed with an existing command within baseModel will bring up a description of the command if it's documented.  
+	
 
 * Examples
 	(Examples will be added soon)
