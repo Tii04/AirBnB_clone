@@ -13,6 +13,7 @@ class BaseModel():
         inherit it."""
 
     def __init__(self):
+        """ Initialises attributes"""
 
         self.id = str(uuid4())
         self.created_at = self.updated_at = datetime.now()
