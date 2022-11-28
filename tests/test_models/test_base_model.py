@@ -5,6 +5,7 @@
 from models.base_model import BaseModel
 import unittest
 from datetime import datetime
+from time import sleep
 
 
 class TestBaseModel(unittest.TestCase):
@@ -35,7 +36,25 @@ class TestBaseModel(unittest.TestCase):
         instance1 = BaseModel()
         instance2 = BaseModel()
         self.assertNotEqual(instance1.id, instance2.id)
-    
+
+    def test_time_diff_created_at(self):
+        """Tests if there is a time difference"""
+
+        instance1 = BaseModel()
+        sleep(1)
+        instance2 = BaseModel()
+        self.assertNotEqual(instance1.created_at, instance2.created_at)
+
+    def test_time_diff_updated_at(self):
+        """ Tests for time difference"""
+
+        instance1 = BaseModel()
+        sleep(1)
+        instance2 = BaseModel()
+        self.assertNotEqual(instance1.updated_at, instance2.updated_at)
+
+    def test_baseModel(self):
+        self.assertEqual(BaseModel, type(BaseModel()))
 
 if __name__ == '__main__':
     unittest.main()
