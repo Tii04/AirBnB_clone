@@ -6,6 +6,7 @@ from os.path import exists
 from models import base_model
 
 
+BaseModel = base_model.BaseModel
 name_class = ["BaseModel", "City", "State",
                       "Place", "Amenity", "Review", "User"]
 
@@ -50,7 +51,7 @@ class FileStorage():
         if (exists(FileStorage.__file_path)):
             with open(FileStorage.__file_path, "r") as f:
                 dic_obj = load(f)
-                for key, value in dic_obj.item():
+                for key, value in dic_obj.items():
                     class_name = key.split(".")[0]
                     if class_name in name_class:
                         FileStorage.__objects[key] = eval(class_name)(**value)
