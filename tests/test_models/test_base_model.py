@@ -56,5 +56,14 @@ class TestBaseModel(unittest.TestCase):
     def test_baseModel(self):
         self.assertEqual(BaseModel, type(BaseModel()))
 
+    def test_kwargs(self):
+        basemodel = BaseModel()
+        self.assertEqual(type(basemodel).__name__, "BaseModel")
+        self.assertTrue(hasattr(basemodel, "id"))
+        self.assertTrue(hasattr(basemodel, "created_at"))
+        self.assertFalse(hasattr(basemodel, "name"))
+        self.assertTrue(hasattr(basemodel, "updated_at"))
+        self.assertTrue(hasattr(basemodel, "__class__"))
+
 if __name__ == '__main__':
     unittest.main()

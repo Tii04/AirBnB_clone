@@ -12,12 +12,23 @@ class BaseModel():
     """ This class defines all attributes for other classes that
         inherit it."""
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """ Initialises attributes"""
 
-        self.id = str(uuid4())
-        self.created_at = self.updated_at = datetime.now()
-        self.updated_at = datetime.now()
+        if args is not None and len(args) > 0:
+            pass
+        if kwargs:
+            for key, item in kwargs.items():
+                if key in ['created_at', 'updated_at']:
+                    item = datetime.strptime(item, format_dt)
+                if key not in ['__class__']:
+                    setattr(self, key, item)
+
+        else:
+
+            self.id = str(uuid4())
+            self.created_at = self.updated_at = datetime.now()
+            self.updated_at = datetime.now()
 
     def __str__(self):
         """ Specifies the format of printing"""
