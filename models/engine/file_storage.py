@@ -3,13 +3,17 @@
 
 from json import dump, load, dumps
 from os.path import exists
-from models import base_model
+from models import base_model, user, place, state, city, amenity, review
 
 
 BaseModel = base_model.BaseModel
+User = user.User
+Place = state.State
+City = city.City
+Amenity = amenity.Amenity
+Review = review.Review
 name_class = ["BaseModel", "City", "State",
-                      "Place", "Amenity", "Review", "User"]
-
+              "Place", "Amenity", "Review", "User"]
 
 
 class FileStorage():
