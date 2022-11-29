@@ -7,6 +7,7 @@ from datetime import datetime
 import json
 import models
 
+format_dt = "%Y-%m-%dT%H:%M:%S.%f"
 
 class BaseModel():
     """ This class defines all attributes for other classes that
@@ -27,8 +28,9 @@ class BaseModel():
         else:
 
             self.id = str(uuid4())
-            self.created_at = self.updated_at = datetime.now()
+            self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            models.storage.new(self)
 
     def __str__(self):
         """ Specifies the format of printing"""
@@ -41,6 +43,7 @@ class BaseModel():
         updated_at with the current datetime"""
 
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """  returns a dictionary containing all
