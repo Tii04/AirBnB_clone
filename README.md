@@ -20,5 +20,3 @@ This project will be the first step in creating an Airbnb. However this AirBnB w
 	"help" typed with an existing command within baseModel will bring up a description of the command if it's documented.  
 	
 
-* Examples
-	(Examples will be added soon)
