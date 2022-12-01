@@ -1,8 +1,11 @@
 #!/usr/bin/python3
 """Defines the HBnB console."""
-import cmd
+
+
 import re
 from shlex import split
+import cmd
+import json
 from models import storage
 from models.base_model import BaseModel
 from models.user import User
@@ -29,6 +32,9 @@ def parse(arg):
         retl = [i.strip(",") for i in lexer]
         retl.append(curly_braces.group())
         return retl
+
+classes = {'BaseModel': BaseModel, 'User': User, 'Place': Place,
+           'State': State, 'City': City, 'Amenity': Amenity, 'Review': Review}
 
 
 class HBNBCommand(cmd.Cmd):
