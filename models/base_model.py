@@ -9,6 +9,7 @@ import models
 
 format_dt = "%Y-%m-%dT%H:%M:%S.%f"
 
+
 class BaseModel():
     """ This class defines all attributes for other classes that
         inherit it."""

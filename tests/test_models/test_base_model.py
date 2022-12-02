@@ -65,5 +65,6 @@ class TestBaseModel(unittest.TestCase):
         self.assertTrue(hasattr(basemodel, "updated_at"))
         self.assertTrue(hasattr(basemodel, "__class__"))
 
+
 if __name__ == '__main__':
     unittest.main()

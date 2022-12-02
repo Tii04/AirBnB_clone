@@ -33,6 +33,7 @@ def parse(arg):
         retl.append(curly_braces.group())
         return retl
 
+
 classes = {'BaseModel': BaseModel, 'User': User, 'Place': Place,
            'State': State, 'City': City, 'Amenity': Amenity, 'Review': Review}
 
